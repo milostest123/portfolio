@@ -1,23 +1,29 @@
 <div class="body">
-<div class="contact-page">
+  <div class="contact-page">
     <h2 id="contact">Get in touch</h2>
-    <div   class="contact-info">
+    <div class="contact-info">
       <div class="item">
         <i class="icon fas fa-home"></i>
-       <span style="color: white;">Leskovac, Serbia</span> 
+        <span>Leskovac, Serbia</span>
       </div>
-     
+
       <div class="item">
         <i class="icon fas fa-envelope"></i>
-        <span style="color: white;">cirkovicmilos99@gmail.com</span> 
+        <span>cirkovicmilos99@gmail.com</span>
       </div>
-     
+
     </div>
-    <form action="" class="contact-form">
-      <input type="text" class="textb" disabled placeholder="Your Name">
-      <input type="email" class="textb" disabled placeholder="Your Email">
-      <textarea disabled placeholder="Your Message"></textarea>
-      <button disabled class="btn">Send</button>
+    <form [formGroup]='contForm' class="contact-form">  
+        <div class="message" *ngIf="messageEmail !='' ">{{messageEmail}}</div>
+      <input name="email" formControlName='from' type="email" class="textb" placeholder="Your Email">
+      <input name="subject" formControlName='subject' type="text" class="textb" placeholder="Subject">
+      <textarea name="message" formControlName='message' placeholder="Your Message"></textarea>
+      <button [disabled]="contForm.invalid" (click)="sendEmail()" class="btn">Send</button>
     </form>
+      
   </div>
+
+  
+ 
 </div>
+
