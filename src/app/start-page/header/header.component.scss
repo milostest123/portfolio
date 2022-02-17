@@ -262,6 +262,13 @@ a{
 		align-items: center;
 	}
 }
+
+@media all and (max-width : 800px) {
+   .hire-me{
+	   margin-bottom: 30px;
+   }
+}
+
 @media all and (max-width : 500px) {
 	.intro-details > .intro-image{
 	    width: 100%;
